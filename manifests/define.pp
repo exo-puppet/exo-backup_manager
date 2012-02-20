@@ -54,6 +54,7 @@ define backup_manager::define ($hour = undef, $minute = undef, $month = undef, $
             ensure => file,
             owner => root,
             group => root,
+            mode => 600, # We may have passwords
             source => "${source}",
             require => Class['backup_manager::install'],
     } ->
