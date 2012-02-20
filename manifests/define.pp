@@ -60,7 +60,7 @@ define backup_manager::define ($hour = undef, $minute = undef, $month = undef, $
     } ->
     cron { "${name}" :
         ensure => present,
-        command => "/usr/sbin/backup-manager --verbose -c /etc/backup-manager/${name}.conf  > /dev/null 2>&1",
+        command => "/usr/sbin/backup-manager -c /etc/backup-manager/${name}.conf  > /dev/null 2>&1",
         user => "root",
         hour => $hour,
         minute => $minute,
