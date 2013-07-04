@@ -11,8 +11,8 @@
 # == Parameters
 #   [+ensure+]
 #       (OPTIONAL) (default: present)
-#       
-#       this variable allows to choose if backup-manager must be present and which version (values : "present", "latest", a version) 
+#
+#       this variable allows to choose if backup-manager must be present and which version (values : "present", "latest", a version)
 #
 # == Modules Dependencies
 #
@@ -23,7 +23,7 @@
 #   }
 #
 ################################################################################
-class backup_manager ( $ensure = present) {
-
-    include backup_manager::params, backup_manager::install, backup_manager::config
+class backup_manager (
+  $ensure = present) {
+  include backup_manager::params, backup_manager::install, backup_manager::config
 }
