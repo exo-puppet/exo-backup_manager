@@ -25,5 +25,10 @@
 ################################################################################
 class backup_manager (
   $ensure = present) {
+
+  # modules dependencies
+  include repo
+
+  # internal classes
   include backup_manager::params, backup_manager::install, backup_manager::config
 }

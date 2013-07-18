@@ -5,8 +5,10 @@ class backup_manager::install {
   case $::operatingsystem {
     /(Ubuntu)/ : {
       package { 'backup-manager':
-        ensure => $backup_manager::ensure,
-        name   => $backup_manager::params::package_name,
+        ensure  => $backup_manager::ensure,
+        name    => $backup_manager::params::package_name,
+        require => [
+          Exec['repo-update'],],
       }
     }
   }
